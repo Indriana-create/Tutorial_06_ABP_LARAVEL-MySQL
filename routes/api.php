@@ -12,10 +12,12 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('/register', [AuthController::class, 'registerUser']);
 Route::post('/login', [AuthController::class, 'loginUser']);
 
+/*Route::resource('/products' , ApiProductController::class);*/
+
 Route::middleware('auth:sanctum')->group(function() {
     Route::resource('/products' , ApiProductController::class);
 });
 
-Route::get('/user', function (Request $request) {
+/*Route::get('/user', function (Request $request) {
     return $request->user();
-})->middleware('auth:sanctum');
+})->middleware('auth:sanctum');*/
